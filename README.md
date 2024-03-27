@@ -2,7 +2,7 @@
 A superhero hunter app. Using only vanilla javascript.
 
 ## Links: <br>
-Video Explanation Link  -  <br>
+Video Explanation Link  - https://youtu.be/RTvdcXu79n0 <br>
 GitHub Repo Link - https://github.com/nova1610/superhero_hunter <br>
 Live Link - https://nova1610.github.io/superhero_hunter/ <br>
 
