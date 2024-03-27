@@ -1,0 +1,187 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <title>SuperHero_Hunter</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  
+  <!-- Stylesheet -->
+  <link rel="stylesheet" href="style.css" /> 
+  
+  <!-- Favicon -->
+  <link rel="icon" href="/Images/favicon.png" type="image/x-icon">
+  
+  <!-- Font -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Kalam&display=swap" rel="stylesheet">
+  
+  <!-- Bootstrap -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous" />
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC" crossorigin="anonymous">
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+    crossorigin="anonymous"></script>
+</head>
+
+<body>
+  <!-- Search Bar -->
+  <section>
+    <div class="input-group d-flex justify-content-center mt-3 search-container">
+      <label for="search-bar" class="d-flex align-items-center fw-bold mx-2">Search </label>
+      <div class="form-outline">
+        <input type="search" id="search-bar" class="form-control" />
+      </div>
+
+      <button type="button" id="fav-button" class="btn btn-primary rounded ms-1" data-bs-toggle="modal"
+        data-bs-target="#favourite-modal">
+        <i class="fas fa-bookmark"></i>
+      </button>
+    </div>
+  </section>
+
+  <!-- Hero List -->
+  <section>
+    <div class="container-fluid mx-auto align-self-center">
+      <div class="row justify-content-evenly mx-auto" id="hero-list">
+        <!-- Hero Card Template -->
+        <template id="hero-card">
+          <div class="col-md-4 mt-2 m-1">
+            <div class="card">
+              <div class="card-body">
+                <div id="name" class="card-title">Name</div>
+                <div id="comic" class="card-title">Comic</div>
+                <div id="series" class="card-title">Series</div>
+                <div id="stories" class="card-title">Stories</div>
+                <div id="buttons" class="d-flex justify-content-between">
+                  <button type="button" id="learn-more" class="btn btn-outline-primary" data-bs-toggle="modal"
+                    data-bs-target="#learn-more-modal" data-bs-dismiss="modal">Learn More</button>
+                  <button id="fav" class="btn btn-primary">Add To Favourite</button>
+                </div>
+              </div>
+            </div>
+          </div>
+        </template>
+      </div>
+    </div>
+  </section>
+
+  <!-- Learn More Modal -->
+  <section>
+    <div class="modal fade" id="learn-more-modal">
+      <div class="modal-lg modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title m-auto" id="modal-title">Modal title</h5>
+          </div>
+          <div class="modal-body">
+            <div class="row">
+              <div class="col-md-6">
+                <div id="modal-id">Unique ID</div>
+                <div id="modal-description">Description</div>
+                <div id="modal-modified">Information Last Updated</div>
+                <div id="modal-comics">Comics</div>
+                <div id="modal-series">Series</div>
+                <div id="modal-stories">Stories</div>
+                <div id="modal-events">Events</div>
+              </div>
+              <div class="col-md-4 m-auto">
+                <img id="hero-image" src="" alt="Image Not Available">
+              </div>
+            </div>
+          </div>
+          <div class="modal-footer">
+            <button type="button" id="fav-button" class="btn btn-outline-primary" data-bs-toggle="modal"
+              data-bs-target="#favourite-modal" data-bs-dismiss="modal">Back To Favourite</button>
+            <button type="button" class="btn btn-primary" id="modal-fav">Add To Favourite</button>
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Favourite Modal -->
+  <section>
+    <div class="modal fade" id="favourite-modal">
+      <div class="modal-lg modal-dialog modal-dialog-centered modal-dialog-scrollable">
+        <div class="modal-content">
+          <div class="modal-header">
+            <h5 class="modal-title m-auto">Favourite Heroes</h5>
+          </div>
+          <div class="modal-body">
+            <!-- Favourite List -->
+            <div class="container-fluid mx-auto align-self-center">
+              <div class="row justify-content-evenly mx-auto" id="fav-list">
+                <!-- Hero Card Template -->
+                <template id="hero-card">
+                  <div class="col-md-3 mt-2 m-1">
+                    <div class="card">
+                      <div class="card-body">
+                        <div id="name" class="card-title">Name</div>
+                        <div id="comic" class="card-title">Comic</div>
+                        <div id="series" class="card-title">Series</div>
+                        <div id="stories" class="card-title">Stories</div>
+                        <div id="buttons" class="d-flex justify-content-between">
+                          <button id="fav" class="btn btn-primary">Add To Favourite</button>
+                          <button type="button" id="learn-more" class="btn btn-outline-primary" data-bs-toggle="modal"
+                            data-bs-target="#learn-more-modal">Learn More</button>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+                </template>
+              </div>
+            </div>
+
+          </div>
+          <div class="modal-footer">
+            <button type="button" class="btn btn-secondary" data-bs-dismiss="modal">Close</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- Toast AddToFavourite/ RemoveFromFavourite/ Not-Found-->
+    <div class="toast-container position-sticky p-3 bottom-0 start-50 translate-middle-x" id="toastList"
+      style="z-index: 10000;">
+      <div class="toast" role="alert" id="toast-added">
+        <div class="toast-header text-white bg-success justify-content-between">
+          <i class="fa-solid fa-plus"></i>
+          <strong class="mx-3"> Favourite Hero</strong>
+        </div>
+        <div class="toast-body">
+          Hero Added To Favourite
+        </div>
+      </div>
+
+      <div class="toast" role="alert" id="toast-removed">
+        <div class="toast-header text-white bg-danger justify-content-between">
+          <i class="fa-solid fa-minus"></i>
+          <strong class="mx-3"> Unfavourite Hero</strong>
+        </div>
+        <div class="toast-body">
+          Hero Removed From Favourite
+        </div>
+      </div>
+    </div>
+
+    <div class="toast position-absolute bottom-50 start-50 translate-middle-x" role="alert" id="toast-not-found">
+      <div class="toast-header text-white bg-danger justify-content-between">
+        <i class="fa-solid fa-xmark"></i>
+        <strong class="mx-3"> Error</strong>
+      </div>
+      <div class="toast-body">
+        Hero Not In Database
+      </div>
+    </div>
+
+</body>
+<script src="https://kit.fontawesome.com/437741c5cb.js" crossorigin="anonymous"></script>
+<script src="script.js"></script>
+
+</html>

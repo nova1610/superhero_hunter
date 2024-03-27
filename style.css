@@ -1,0 +1,27 @@
+:root {
+    --light-green: #abe188ff;
+    --flax: #f7ef99ff;
+    --buff: #f1bb87ff;
+    --coral: #f78e69ff;
+    --ebony: #5d675bff;
+}
+
+* {
+    font-family: "Kalam", cursive;
+    font-weight: 400;
+    font-style: normal;
+}
+
+/*  Mobile Responsive  */
+@media only screen and (max-width: 768px) {
+    .search-container {
+      width: 100% !important;
+    }
+  
+    #toastList{
+        transform: translateX(0%) !important;
+        bottom: 0% !important;
+        transform: scale(.5);
+
+    }
+  }
